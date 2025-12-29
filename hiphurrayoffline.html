@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hip Hurray - Faith's Birthday</title>
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffe5ec, #fff9f0);
+    text-align: center;
+    padding: 20px;
+  }
+  h1{ color: #ff4d6d; }
+  .card{
+    display:inline-block;
+    margin:10px;
+    padding:15px 20px;
+    border-radius:8px;
+    background:#fff;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:transform 0.2s;
+  }
+  .card:hover{ transform: scale(1.05); background:#ffebf0;}
+  #messages div{
+    margin:10px auto;
+    padding:8px;
+    background:#d4edda;
+    width:60%;
+    border-radius:6px;
+  }
+  footer{margin-top:20px; font-size:14px; color:#555;}
+</style>
+</head>
+<body>
+
+<h1>Hip Hip Hip Hurray! 🎉</h1>
+<p>Hi friends! It's Faith here. Today is my birthday and I'm so glad you stopped by. <br>
+Send me a wish below and let's celebrate together! <br>
+(<em>Aujourhui c'est mon aniversaire</em> means “Today is my birthday” in French)</p>
+
+<input type="text" id="wishInput" placeholder="Type your wish here" style="padding:8px;width:60%;max-width:300px;">
+<button onclick="sendWish()" style="padding:8px 15px;background:#ff4d6d;color:white;border:none;border-radius:4px;">Send Wish</button>
+
+<div id="thankYou" style="margin-top:10px;font-weight:bold;color:#ff4d6d;"></div>
+<div id="messages"></div>
+
+<h2>If Wishes Were Horses 🐴</h2>
+<p>Click any dream gift for fun!</p>
+<div>
+  <div class="card" onclick="fakeWish('Trip to the Moon')">Trip to the Moon</div>
+  <div class="card" onclick="fakeWish('Chocolate Fountain')">Chocolate Fountain</div>
+  <div class="card" onclick="fakeWish('Buy a Laptop')">Laptop</div>
+  <div class="card" onclick="fakeWish('Coding Robot')">Coding Robot</div>
+  <div class="card" onclick="fakeWish('Arduino set')">Arduino set</div>
+  <div class="card" onclick="fakeWish('UNVolunteer')">Tripod stand</div>
+  <div class="card" onclick="fakeWish('Teach me Machine Learning')">Machine Learning</div>
+  <div class="card" onclick="fakeWish('Buy a Book for you')">Buy a book </div>
+  <div class="card" onclick="fakeWish('Paint an Art for you')">Paint an Art </div>
+  <div class="card" onclick="fakeWish('LED light')">LED light</div>
+  <div class="card" onclick="fakeWish('Unlimited Internet access')">Unlimited Internet</div>
+  <div class="card" onclick="fakeWish('A trip to Japan')">Trip to Japan</div>
+</div>
+<div id="wishReply" style="margin-top:10px;color:green;font-weight:bold;"></div>
+
+<h2>About Me 💻✨</h2>
+<p>I’m Faith – a young Cameroonian graphic designer and tech lover. I create UI/UX designs, flyers, and cool web ideas.<br>
+My faith keeps me inspired and joyful every day. Thank you for celebrating with me!</p>
+<h4><a href="portfolio.html" alt="myport">Link to my portfolio</h4>
+
+<footer>Made with ❤️ by Faith | Hip Hurray Birthday 2025</footer>
+
+<script>
+function sendWish(){
+  const input = document.getElementById('wishInput');
+  const msg = input.value.trim();
+  if(msg){
+    document.getElementById('messages').innerHTML += '<div>'+msg+'</div>';
+    document.getElementById('thankYou').textContent = 'Thank you so much for your wish! 🎉';
+    input.value = '';
+  }
+}
+function fakeWish(item){
+  document.getElementById('wishReply').textContent =
+    'Haha! If wishes were horses... thanks for picking '+item+'! 🎁';
+}
+</script>
+
+</body>
+</html>

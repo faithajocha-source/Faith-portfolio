@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faith Ajocha — Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Faith Ajocha — Computer Engineering student, aspiring Applied AI Engineer. UI/UX, Web Dev, Graphic Design." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #291823;
+      --card: #beb5be;
+      --muted: #ffffff;
+      --accent: #ffffff;
+      --glass: rgba(255, 255, 255, 0.04);
+      --light-bg: #f6f8fb;
+      --light-text: #291823;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #2e1321);
+      color: #e6eef8;
+      line-height: 1.5
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 28px
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px
+    }
+
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center
+    }
+
+    .logo {
+      width: 600px;
+      height:400px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    nav a:hover {
+      color: white;
+      background: var(--glass)
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      backdrop-filter: blur(6px)
+    }
+
+    .intro h1 {
+      margin: 0 0 8px 0;
+      font-size: 28px
+    }
+
+    .intro p {
+      margin: 0 0 16px;
+      color: var(--muted)
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px
+    }
+
+    .btn {
+      padding: 10px 14px;
+
+      margin-right: 20px;
+      border-radius: 10px;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), #85667c);
+      color: #000000
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      color: var(--muted)
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px
+    }
+
+    .avatar {
+      width: 170px;
+      height: 200px;
+      border-radius: 20%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      color: black;
+      box-shadow: 0 0 10px rgba(18, 1, 26, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.04)
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center
+    }
+
+    .section {
+      margin: 24px 0
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .skill {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px
+    }
+
+    .project {
+      padding: 16px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      cursor: pointer;
+      transition: transform .18s
+    }
+
+    .project:hover {
+      transform: translateY(-6px)
+    }
+
+    .project h3 {
+      margin: 8px 0
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    footer {
+      margin-top: 36px;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      color: var(--muted)
+    }
+
+    @media (max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .projects {
+        grid-template-columns: 1fr
+      }
+
+      .nav {
+        display: none
+      }
+    }
+
+    .light {
+      --bg: var(--light-bg);
+      --card: #ffffff;
+      --muted: #270420;
+      --accent: #380133;
+      color: var(--light-text)
+    }
+
+    .light body {
+      background: var(--bg)
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .badge {
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03)
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+      z-index: 60
+    }
+
+    .modal.open {
+      display: flex
+    }
+
+    .modal .dialog {
+      width: 90%;
+      max-width: 820px
+    }
+
+    .faith{
+      margin-right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="faith">
+          <div style="font-weight:700">Faith Ajocha Matike Litumbe</div>
+          <div style="font-size:12px;color:var(--muted)">Computer Engineering Student @ FET UB | Graphic Designer | Front-end dev | AI enthusiast | Tech enthusiat</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="btn btn-ghost">Toggle</button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h1>Hi , I’m Faith. I build things with design, code and curiosity.</h1>
+          <p>I’m a Computer Engineering student at the University of Buea - Faculty Of Engineering And Technology, exploring UI/UX, web development, and applied
+            AI Engineering.I am also a brilliant and creative graphic designer. I build small web projects and prototypes that solve simple realworld problems.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#projects">See my work</a>
+            <a class="btn btn-ghost" href="#contact">Hire / Contact</a>
+          </div>
+          <div class="section" id="about">
+            <div class="card">
+              <h3>About me</h3>
+              <p class="muted">I’m Faith Ajocha , a Computer Engineering student. My focus areas: front-end
+                web development, UI/UX, graphic design, and the foundations of AI. I enjoy turning ideas into
+                interactive small apps and designs that people can use.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="card profile">
+          <div class="avatar"></div>
+          <div style="font-weight:700">Faith Ajocha</div>
+          <div class="meta">University of Buea • Computer Engineering</div>
+          <div style="width:100%;margin-top:8px" class="row">
+            <div class="badge">Available for mentorship & internships</div>
+            <div class="badge">Open to freelance</div>
+          </div>
+        </aside>
+      </section>
+      <section class="section" id="skills">
+        <div class="card">
+          <h3>Skills</h3>
+          <div class="skills" style="margin-top:12px">
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">HTML</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">CSS</div>
+            <div  style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">JavaScript</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">Figma</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">Graphic Design</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">UI / UX</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">C / C++</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">Intro to AI</div>
+            <div style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 20px;" class="skill">Video Editing</div>
+          </div>
+        </div>
+      </section>
+
+       <section class="section" id="projects">
+        <h3 style="margin-bottom:12px">Some of my graphic designs</h3>
+        <div class="projects">
+          <div class="project card" data-title="Birthday Wish Site"
+            data-desc="A small interactive website where visitors can leave birthday wishes and see them appear live. Built with HTML, CSS, and a simple backend idea (Google Forms integration)."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">
+              <h4>Coffe Shop Flyer</h4>
+              <img style="
+               width: 400px;
+               margin-bottom: 10px;
+      height: 400px;
+      border-radius: 10%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      color: black;
+    
+              " src="coffe shop2.png" alt="">
+            </div>
+            <div class="muted">Designed using adobe photoshop & Adobe Illustrator</div>
+          </div>
+          <div class="project card" data-title="Google Home Recreation"
+            data-desc="Recreated the Google homepage as a learning exercise to practice layout, search input interactions and clean UI."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">
+               <h4>A Restaurant Flyer</h4>
+              <img style="
+               width: 400px;
+               margin-bottom: 10px;
+      height: 400px;
+      border-radius: 10%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      color: black;
+      
+              " src="WhatsApp Image 2025-12-08 at 09.45.16.jpeg" alt="">
+            </div>
+            <div class="muted">made using Adobe Photoshop • Adobe Illustrator</div>
+          </div>
+          <div class="project card" data-title="YouTube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">
+               <h4>A Christmas wish flyer</h4>
+              <img style="
+               width: 400px;
+               margin-bottom: 10px;
+      height: 400px;
+      border-radius: 10%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      color: black;
+     
+              " src="upperroom1.png" alt="">
+            </div>
+            <div class="muted">made using Adobe Photoshop • Adobe Illustrator</div>
+          </div>
+          <div class="project card" data-title="Frog Robot Project"
+            data-desc="Internship project at PEFSCOM Systems — worked on embedded C# components and system integration for the frog robot (documentation & testing)."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">
+               <h4>Njangi app flyer</h4>
+              <img style="
+               width: 400px;
+               margin-bottom: 10px;
+      height: 400px;
+      border-radius: 10%;
+      background: url(1759498844959.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      color: black;
+    
+              " src="achup 2.png" alt="">
+            </div>
+            <div class="muted">made using Adobe Photoshop • Adobe Illustrator</div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section" id="projects">
+        <h3 style="margin-bottom:12px">Some of My Mini projects</h3>
+        <div class="projects">
+          <div class="project card" data-title="Birthday Wish Site"
+            data-desc="A small interactive website where visitors can leave birthday wishes and see them appear live. Built with HTML, CSS, and a simple backend idea (Google Forms integration)."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">
+              <a href="https://faiths-birthday-page.netlify.app/">Mini Birthday Wish Website</a>
+            </div>
+            <div class="muted">HTML | CSS | Forms</div>
+          </div>
+            <div class="project card" data-title="Google Home Recreation"
+            data-desc="Recreated the Google homepage as a learning exercise to practice layout, search input interactions and clean UI."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700"><a href=""><a href="Googleclone.html">Google Homepage Recreation</a></div>
+            <div class="muted">HTML • CSS • Interaction</div>
+            </div>
+            <div class="project card" data-title="YouTube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700"><a href="youtube clone/youtube3.html">YouTube Clone</a></div>
+            <div class="muted">HTML • CSS • JS</div>
+            </div>
+            <div class="project card" data-title="Youtube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700"></div><a href="visionboard/vision.html">vision board</a></div>
+            <div class="muted">html | css | JS</div>
+             </div>
+            <div class="project card" data-title="Youtube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700"></div><a href="to do list">To do List</a></div>
+            <div class="muted">html | css | JS</div>
+            </div>
+            <div class="project card" data-title="Youtube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">Productiveholiday</div><a href="ProdHolidays/Productiveholiday.html">Productivity tracker</a></div>
+            <div class="muted">html | css | JS</div>
+            </div>
+ 
+            <div class="project card" data-title="Youtube Clone"
+            data-desc="A front-end clone of YouTube UI for learning layout, cards, and responsive grids. Built with HTML/CSS and vanilla JS."
+            onclick="openProject(this)">
+            <div style="font-size:18px;font-weight:700">personal_calculator</div><a href="personal_calculator/index.html"></a></div>
+            <div class="muted">html | css | JS</div>
+            </div>
+            
+          
+        </div>
+      </section>
+      <section class="section" id="contact">
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="muted">I’d love to hear from you — whether it’s mentorship, internship opportunities, or freelance
+            work. I'm Available for work</p>
+          <div style="margin-top:12px" class="grid">
+            <div class="row"><strong>Email:</strong>&nbsp;<span class="muted">faithajocha@gmail.com</span></div>
+            <div class="row"><strong>GitHub:</strong>&nbsp;<span class="muted">github.com/faithajocha</span></div>
+            <div class="row"><strong>Tiktok:</strong>&nbsp;<span class="muted">tiktok.com/faithajocha</span></div>
+            <div class="row"><strong>LinkedIn:</strong>&nbsp;<span class="muted">linkedin.com/in/faithlitumbe</span>
+            </div>
+          </div>
+    
+        </div>
+      </section>
+    </main>
+    <footer class="card">
+      <div style="font-weight:700">Let’s build something.</div>
+      <div class="muted">Designed by Faith Ajocha @2025</div>
+    </footer>
+  </div>
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="dialog card">
+      <button onclick="closeModal()"
+        style="float:right;background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer">✕</button>
+      <h2 id="modalTitle">Project</h2>
+      <p id="modalDesc" class="muted">Project details</p>
+      <div style="margin-top:12px;display:flex;gap:12px">
+        <a id="viewLink" class="btn btn-primary" href="#">View live</a>
+        <a id="codeLink" class="btn btn-ghost" href="#">View code</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => { document.documentElement.classList.toggle('light'); });
+    function openProject(el) {
+      const title = el.dataset.title || 'Project';
+      const desc = el.dataset.desc || '';
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('viewLink').href = '#';
+      document.getElementById('codeLink').href = '#';
+      document.getElementById('modal').classList.add('open');
+      document.getElementById('modal').setAttribute('aria-hidden', 'false');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.getElementById('modal').setAttribute('aria-hidden', 'true');
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const hash = a.getAttribute('href'); if (hash.length > 1) { e.preventDefault(); document.querySelector(hash).scrollIntoView({ behavior: 'smooth' }); } }); });
+  </script>
+</body>
+
+</html>
